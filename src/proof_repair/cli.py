@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
-from .benchmark import load_benchmark
+from .benchmark import benchmark_statistics, load_benchmark
 from .verifier import LeanVerifier
 
 
@@ -13,6 +14,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Lean autoformalization research tools")
     parser.add_argument("--benchmark", default="data/benchmark.jsonl", help="benchmark JSONL path")
     parser.add_argument("--list-benchmark", action="store_true", help="print benchmark items")
+    parser.add_argument("--benchmark-stats", action="store_true", help="print corpus counts as JSON")
     parser.add_argument("--check", type=Path, help="check a complete Lean theorem file")
     parser.add_argument("--lean-command", help="Lean command, e.g. 'lake env lean'")
     parser.add_argument("--timeout", type=float, default=20, help="checker timeout in seconds")
@@ -21,6 +23,8 @@ def main() -> int:
     if args.list_benchmark:
         for item in load_benchmark(args.benchmark):
             print(f"{item.id}\t{item.split}\t{', '.join(item.tags)}\t{item.natural_language}")
+    if args.benchmark_stats:
+        print(json.dumps(benchmark_statistics(load_benchmark(args.benchmark)), indent=2, sort_keys=True))
     if args.check:
         result = LeanVerifier(args.lean_command, args.timeout).check(
             args.check.read_text(encoding="utf-8")
@@ -29,7 +33,7 @@ def main() -> int:
         if result.diagnostics:
             print(result.diagnostics)
         return 0 if result.accepted else 1
-    if not args.list_benchmark and not args.check:
+    if not args.list_benchmark and not args.benchmark_stats and not args.check:
         parser.print_help()
     return 0
 

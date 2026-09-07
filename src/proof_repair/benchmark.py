@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 
 from .models import BenchmarkItem
@@ -32,3 +33,17 @@ def load_benchmark(path: str | Path) -> list[BenchmarkItem]:
             tags=tuple(record.get("tags", [])),
         ))
     return items
+
+
+def benchmark_statistics(items: list[BenchmarkItem]) -> dict[str, object]:
+    """Return transparent corpus counts for a benchmark report or experiment log."""
+    split_counts = Counter(item.split for item in items)
+    tag_counts = Counter(tag for item in items for tag in item.tags)
+    return {
+        "examples": len(items),
+        "splits": dict(sorted(split_counts.items())),
+        "tags": dict(sorted(tag_counts.items())),
+        "mean_statement_characters": (
+            sum(len(item.natural_language) for item in items) / len(items) if items else 0.0
+        ),
+    }
