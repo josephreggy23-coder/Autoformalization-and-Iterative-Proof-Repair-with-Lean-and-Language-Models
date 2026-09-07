@@ -139,6 +139,11 @@ with `write_attempts(...)`, and compute summary metrics with `summarize(...)`.
 Keeping provider credentials and model calls outside the core package makes the
 experiment reproducible without hard-coding a vendor or exposing secrets.
 
+For a result that other people can audit, follow the
+[experiment reporting protocol](docs/EXPERIMENT_PROTOCOL.md). It specifies the
+manifest fields, retained artifacts, and example-level metrics required for a
+comparative claim.
+
 ## Experimental safeguards
 
 - **No self-grading:** an LLM cannot mark its own proof as correct.
