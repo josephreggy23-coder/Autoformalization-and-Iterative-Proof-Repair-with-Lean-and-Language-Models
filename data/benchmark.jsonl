@@ -1,0 +1,4 @@
+{"id":"nat_add_zero","split":"dev","natural_language":"For every natural number n, n plus zero equals n.","reference_statement":"theorem target (n : Nat) : n + 0 = n := by simp","tags":["arithmetic","nat"]}
+{"id":"even_square","split":"dev","natural_language":"The square of an even integer is even.","reference_statement":"theorem target (n : Int) (h : Even n) : Even (n * n) := by rcases h with ⟨k, rfl⟩; exact ⟨2 * (k * k), by ring⟩","tags":["algebra","int"]}
+{"id":"zero_mul","split":"test","natural_language":"For every real number x, zero times x equals zero.","reference_statement":"theorem target (x : Real) : 0 * x = 0 := by ring","tags":["algebra","real"]}
+{"id":"subset_refl","split":"test","natural_language":"Every set is a subset of itself.","reference_statement":"theorem target {α : Type} (s : Set α) : s ⊆ s := by intro x hx; exact hx","tags":["sets"]}
