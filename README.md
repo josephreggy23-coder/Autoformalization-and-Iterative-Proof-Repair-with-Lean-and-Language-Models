@@ -41,7 +41,7 @@ flowchart LR
 | Repair budget | Configurable; default: 3 retries |
 | LLM coupling | Provider-neutral `TextGenerator` protocol |
 | Evidence of validity | Lean process exit status, diagnostics, and elapsed time |
-| Automated checks | 5 unit tests |
+| Automated checks | 8 unit tests |
 
 The benchmark is intentionally small at this stage: it validates the full
 experimental pipeline before scaling to a larger corpus. It is **not** a claim
