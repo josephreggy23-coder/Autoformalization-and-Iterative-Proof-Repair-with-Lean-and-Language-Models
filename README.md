@@ -80,13 +80,16 @@ containing `sorry` or `admit` are rejected before invoking Lean.
 
 ```text
 data/benchmark.jsonl          Curated theorem records
+docs/EXPERIMENT_PROTOCOL.md   Experiment reporting protocol
 examples/zero_mul.lean        A standalone Lean example
 src/proof_repair/
+  models.py                   Typed records shared across the pipeline
   benchmark.py                JSONL loading and validation
   generation.py               Prompts and model-provider interface
   verifier.py                 Isolated Lean subprocess checker
   repair.py                   Bounded compiler-feedback repair loop
   evaluation.py               JSONL artifacts and aggregate metrics
+  manifest.py                 Versioned experiment provenance records
   cli.py                      Benchmark inspection and Lean checking
 tests/                        Pipeline behavior tests
 ```
