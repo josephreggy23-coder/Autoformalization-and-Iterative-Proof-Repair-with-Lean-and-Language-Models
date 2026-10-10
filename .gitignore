@@ -10,3 +10,6 @@ artifacts/
 .mypy_cache/
 .coverage
 htmlcov/
+*.egg-info/
+build/
+dist/
