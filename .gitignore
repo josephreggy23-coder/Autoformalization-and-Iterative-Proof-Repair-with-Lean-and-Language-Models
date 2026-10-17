@@ -16,3 +16,4 @@ dist/
 .lake/
 .ruff_cache/
 Thumbs.db
+.env
