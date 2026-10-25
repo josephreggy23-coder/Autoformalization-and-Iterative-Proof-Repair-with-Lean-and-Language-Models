@@ -92,6 +92,7 @@ src/proof_repair/
   manifest.py                 Versioned experiment provenance records
   cli.py                      Benchmark inspection and Lean checking
 tests/                        Pipeline behavior tests
+pyproject.toml                Package metadata and build configuration
 ```
 
 ## Quick start
