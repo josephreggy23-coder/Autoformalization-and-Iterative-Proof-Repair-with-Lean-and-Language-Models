@@ -17,3 +17,5 @@ dist/
 .ruff_cache/
 Thumbs.db
 .env
+venv/
+coverage.xml
