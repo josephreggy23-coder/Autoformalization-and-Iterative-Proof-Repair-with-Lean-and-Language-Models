@@ -110,7 +110,7 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
-Inspect the benchmark:
+Run `python -m proof_repair.cli --help` to see every option. Inspect the benchmark:
 
 ```powershell
 python -m proof_repair.cli --list-benchmark
