@@ -19,3 +19,5 @@ Thumbs.db
 .env
 venv/
 coverage.xml
+.env.*
+*.log
