@@ -130,7 +130,8 @@ python -m proof_repair.cli --check examples/zero_mul.lean --lean-command "lake e
 
 You can also set `LEAN_COMMAND` instead of passing `--lean-command`. The
 checker writes each candidate to a fresh temporary `.lean` file, prepends
-`import Mathlib`, enforces a timeout, and returns compiler diagnostics unchanged.
+`import Mathlib`, enforces a timeout (20 seconds by default; change it with
+`--timeout`), and returns compiler diagnostics unchanged.
 
 ## Running an LLM experiment
 
