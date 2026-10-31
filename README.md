@@ -116,6 +116,12 @@ Run `python -m proof_repair.cli --help` to see every option. Inspect the benchma
 python -m proof_repair.cli --list-benchmark
 ```
 
+Print corpus counts (for example, examples per split) as JSON:
+
+```powershell
+python -m proof_repair.cli --benchmark-stats
+```
+
 Check a complete Lean theorem using a working Lean/Mathlib command:
 
 ```powershell
