@@ -21,3 +21,8 @@ venv/
 coverage.xml
 .env.*
 *.log
+
+# Editor swap files, Jupyter checkpoints, and Windows folder metadata
+*.swp
+.ipynb_checkpoints/
+desktop.ini
