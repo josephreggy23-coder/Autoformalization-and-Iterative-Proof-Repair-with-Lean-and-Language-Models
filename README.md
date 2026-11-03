@@ -147,7 +147,15 @@ class MyGenerator:
         ...
 ```
 
-Then create a `RepairEngine(MyGenerator(), LeanVerifier(), max_repairs=3)` and
+Then import the pipeline pieces:
+
+```python
+from proof_repair.evaluation import summarize, write_attempts
+from proof_repair.repair import RepairEngine
+from proof_repair.verifier import LeanVerifier
+```
+
+Create a `RepairEngine(MyGenerator(), LeanVerifier(), max_repairs=3)` and
 run it over a chosen benchmark split. Persist the resulting `Attempt` records
 with `write_attempts(...)`, and compute summary metrics with `summarize(...)`.
 Keeping provider credentials and model calls outside the core package makes the
