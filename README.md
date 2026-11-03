@@ -110,6 +110,9 @@ python -m pip install -e .
 python -m unittest discover -s tests -v
 ```
 
+The unit tests use scripted generators and checkers, so they run without Lean
+installed.
+
 Run `python -m proof_repair.cli --help` to see every option. Inspect the benchmark:
 
 ```powershell
