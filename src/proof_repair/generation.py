@@ -24,14 +24,17 @@ smallest valid change you can."""
 
 
 def formalization_prompt(item: BenchmarkItem) -> str:
+    """Build the prompt asking the model to formalize and prove an English theorem."""
     return f"{FORMALIZE_INSTRUCTIONS}\n\nEnglish theorem:\n{item.natural_language}\n"
 
 
 def proof_prompt(statement: str) -> str:
+    """Build the prompt asking the model to prove a given Lean statement."""
     return f"{FORMALIZE_INSTRUCTIONS}\n\nProve this Lean statement:\n{statement}\n"
 
 
 def repair_prompt(source: str, diagnostics: str) -> str:
+    """Build the prompt asking the model to fix ``source`` using Lean diagnostics."""
     return f"{REPAIR_INSTRUCTIONS}\n\nCurrent source:\n{source}\n\nCompiler feedback:\n{diagnostics}\n"
 
 
