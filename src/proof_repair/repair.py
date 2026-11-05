@@ -9,6 +9,8 @@ from .models import Attempt, BenchmarkItem, CheckResult
 
 
 class Checker(Protocol):
+    """Anything that can verify a complete Lean source string."""
+
     def check(self, source: str) -> CheckResult: ...
 
 

@@ -11,6 +11,7 @@ from .verifier import LeanVerifier
 
 
 def main() -> int:
+    """Parse command-line options, run the requested action, and return an exit code."""
     parser = argparse.ArgumentParser(description="Lean autoformalization research tools")
     parser.add_argument("--benchmark", default="data/benchmark.jsonl", help="benchmark JSONL path")
     parser.add_argument("--list-benchmark", action="store_true", help="print benchmark items")
