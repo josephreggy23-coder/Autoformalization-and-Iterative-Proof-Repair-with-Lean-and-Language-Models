@@ -198,4 +198,5 @@ both success rates and rejected artifacts.
 Contributions are welcome, especially benchmark examples with clear sources,
 tests that reproduce Lean diagnostics, and evaluation improvements. Please keep
 every reported result traceable to a model configuration, source artifact, and
-Lean verification outcome.
+Lean verification outcome. Before opening a pull request, run
+`python -m unittest discover -s tests -v` to confirm the test suite passes.
