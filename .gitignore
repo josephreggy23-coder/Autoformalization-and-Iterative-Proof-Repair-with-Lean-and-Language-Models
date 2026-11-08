@@ -26,3 +26,5 @@ coverage.xml
 *.swp
 .ipynb_checkpoints/
 desktop.ini
+*$py.class
+.tox/
