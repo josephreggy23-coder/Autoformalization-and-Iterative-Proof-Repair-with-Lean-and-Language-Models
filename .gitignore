@@ -28,3 +28,8 @@ coverage.xml
 desktop.ini
 *$py.class
 .tox/
+
+# Test and type-checker caches
+.hypothesis/
+.dmypy.json
+.nox/
