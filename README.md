@@ -1,5 +1,5 @@
 # Verified Mathematical Reasoning
-### Autoformalization and iterative proof repair with Lean 4
+**Autoformalization and iterative proof repair with Lean 4**
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](#requirements)
 [![Proof assistant](https://img.shields.io/badge/Proof%20assistant-Lean%204-0F6B8A)](https://lean-lang.org/)
